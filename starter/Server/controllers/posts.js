@@ -1,3 +1,6 @@
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("../util/database");
+
 module.exports = {
   addPost: async (req, res) => {
     console.log("addPost");
@@ -19,4 +22,15 @@ module.exports = {
     console.log("deletePost");
     res.sendStatus(200);
   },
+  Post: sequelize.define("post", {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      allowNull: false,
+      primaryKey: true,
+    },
+    title: DataTypes.STRING,
+    content: DataTypes.TEXT,
+    privateStatus: DataTypes.BOOLEAN,
+  }),
 };
