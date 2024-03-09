@@ -1,3 +1,7 @@
+import React, { useContext } from "react";
+
+import AuthContext from "./store/authContext";
+
 import { NavLink } from "react-router-dom";
 
 import logo from "../assets/dm-logo-white.svg";
